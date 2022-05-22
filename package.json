@@ -11,7 +11,7 @@
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d main",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
@@ -28,7 +28,6 @@
     "gatsby-plugin-styled-components": "^5.14.0",
     "gatsby-source-filesystem": "^4.14.0",
     "gatsby-transformer-sharp": "^4.14.0",
-    "moment": "^2.29.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",

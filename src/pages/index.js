@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import Img from "gatsby-image";
+import { useCountdown } from "../components/hooks/useCountdown";
 
 const Date = styled.div`
   color: #000;
@@ -242,45 +243,26 @@ const ImageContainer = styled.div`
 `;
 
 const Counter = () => {
-  const [date, setState] = useState({
-    days: "",
-    hours: "",
-    minutes: "",
-    seconds: "",
-  });
+  const [days, hours, minutes, seconds] = useCountdown(
+    "2022-07-28T14:00:00.000Z"
+  );
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      var dueDate = moment([2022, 7, 28, 14]);
-      var now = moment();
-
-      setState({
-        days: dueDate.diff(now, "days"),
-        hours: dueDate.diff(now, "hours"),
-        minutes: dueDate.diff(now, "minutes"),
-        seconds: dueDate.diff(now, "seconds"),
-      });
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-  console.log("date.hours", date.hours);
   return (
     <DateCluster>
       <Date>
-        <div>{date.days && date.days}</div>
+        <div>{days}</div>
         <span>zile</span>
       </Date>
       <Date>
-        <div>{date.hours && moment(date.hours).format("hh")}</div>
+        <div>{hours}</div>
         <span>ore</span>
       </Date>
       <Date>
-        <div>{date.minutes && moment(date.minutes).format("mm")}</div>
+        <div>{minutes}</div>
         <span>minute</span>
       </Date>
       <Date>
-        <div>{date.hours && moment(date.seconds).format("ss")}</div>
+        <div>{seconds}</div>
         <span>secunde</span>
       </Date>
     </DateCluster>
