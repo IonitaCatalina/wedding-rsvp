@@ -1,10 +1,10 @@
+import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import moment from "moment";
-import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Layout from "../components/Layout";
 import Img from "gatsby-image";
 import { useCountdown } from "../components/hooks/useCountdown";
+import StyledForm from "../components/StyledForm";
 
 const Date = styled.div`
   color: #000;
@@ -237,6 +237,15 @@ const BannerThree = styled.div`
   }
 `;
 
+const BannerFive = styled.div`
+  width: 100%;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  > div {
+  }
+`;
 const ImageContainer = styled.div`
   width: 100%;
   margin-top: 15px;
@@ -293,6 +302,7 @@ const IndexPage = () => {
           <Counter />
         </MaxWidth>
       </BannerOne>
+
       <BannerTwo>
         <MaxWidth>
           <span>și vă invităm la</span>
@@ -327,11 +337,22 @@ const IndexPage = () => {
           </div>
         </MaxWidth>
       </BannerTwo>
+
       <BannerThree>
         <MaxWidth>
           <h4>Evenimente</h4>
         </MaxWidth>
       </BannerThree>
+
+      <BannerFive>
+        <MaxWidth>
+          <span>Editeaza RSVP</span>
+          <p>
+            Completează formularul de mai jos pentru a ne anunța decizia ta.
+          </p>
+          <StyledForm />
+        </MaxWidth>
+      </BannerFive>
     </Layout>
   );
 };

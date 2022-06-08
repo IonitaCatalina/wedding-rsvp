@@ -15,6 +15,10 @@ export default function Layout({ children }) {
     <>
       <Helmet>
         <link
+          rel="stylesheet"
+          href="//cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+        />
+        <link
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
