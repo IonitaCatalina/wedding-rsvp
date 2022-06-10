@@ -36,6 +36,10 @@ const DateCluster = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 73px;
+  @media screen and (max-width: 500px) {
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
 `;
 
 const MaxWidth = styled.div`
@@ -47,6 +51,7 @@ const MaxWidth = styled.div`
   width: 100%;
   margin: 0 auto;
   min-height: 100%;
+  padding: 0 10px;
 `;
 
 const BannerOne = styled.div`
@@ -157,6 +162,11 @@ const BannerTwo = styled.div`
       justify-content: space-between;
       max-width: 1000px;
       width: 100%;
+      @media screen and (max-width: 500px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
       > p {
         max-width: 374px;
       }
@@ -190,6 +200,11 @@ const BannerTwo = styled.div`
 
       @media screen and (max-width: 1096px) {
         flex-direction: column;
+      }
+      @media screen and (max-width: 500px) {
+        > div {
+          flex-direction: column;
+        }
       }
     }
 
@@ -226,6 +241,7 @@ const BannerThree = styled.div`
     font-style: normal;
     font-weight: 700;
     font-size: 40px;
+    word-break: break-all;
     line-height: 44px;
     margin-bottom: 30px;
     text-align: center;
@@ -236,6 +252,7 @@ const BannerThree = styled.div`
     font-style: normal;
     font-weight: 500;
     font-size: 30px;
+    word-break: break-all;
     line-height: 35px;
     margin-bottom: 40px;
     margin-top: 0;
@@ -262,9 +279,15 @@ const Location = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  iframe {
+    width: 100%;
+    max-width: 659px;
+    max-height: 100% !important;
+  }
   > div {
     margin-bottom: 40px;
-    width: 659px;
+    max-width: 659px;
+    width: 100%;
   }
   @media screen and (max-width: 1440px) {
     align-items: center;
@@ -335,6 +358,34 @@ const Counter = () => {
     </DateCluster>
   );
 };
+
+const BannerSix = styled(BannerTwo)`
+  h4 {
+    font-family: "Crimson Pro";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 67px;
+    text-align: center;
+    color: #000000;
+    padding-top: 50px;
+  }
+  #parents {
+    margin-top: 82px;
+
+    p {
+      max-width: 250px !important;
+      font-family: "Crimson Pro";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 48px;
+      line-height: 53px;
+      text-align: center;
+
+      color: #000000;
+    }
+  }
+`;
 
 const IndexPage = () => {
   const data = useStaticQuery(graphql`
@@ -451,10 +502,9 @@ const IndexPage = () => {
             <iframe
               title="biserica nicolau"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2711.3864508858064!2d27.558154215598513!3d47.189448124694394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cafcae31bb2cbb%3A0x503060df5506dfe6!2sChurch%20of%20Saint%20Nicolas%20Copou!5e0!3m2!1sen!2sro!4v1654877475683!5m2!1sen!2sro"
-              width="659"
-              height="300"
               style={{ border: "0" }}
               allowfullscreen=""
+              height="300"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
             ></iframe>
@@ -473,9 +523,8 @@ const IndexPage = () => {
             <iframe
               title="petrcker"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2710.2386099245587!2d27.531942115599144!3d47.21191332315224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cae39abb521203%3A0xa66728a25baac298!2sGreen%20View%20Salon!5e0!3m2!1sen!2sro!4v1654877564376!5m2!1sen!2sro"
-              width="659"
-              height="300"
               style={{ border: "0" }}
+              height="300"
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
@@ -487,6 +536,16 @@ const IndexPage = () => {
       <BannerFive>
         <StyledForm />
       </BannerFive>
+
+      <BannerSix>
+        <MaxWidth>
+          <h4>Sau contactează-ne telefonic</h4>
+          <div id="parents">
+            <p>Alex 0751361743</p>
+            <p>Diana 0749857784</p>
+          </div>
+        </MaxWidth>
+      </BannerSix>
     </Layout>
   );
 };

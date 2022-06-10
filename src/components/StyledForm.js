@@ -14,9 +14,11 @@ const FormWrap = styled.div`
 
   flex-direction: column;
   align-items: center;
+  padding: 0 10px;
   justify-content: center;
   form {
-    width: 400px;
+    max-width: 400px !important;
+    width: 100%;
   }
   margin-bottom: 66px;
   label {
