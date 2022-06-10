@@ -243,7 +243,28 @@ const BannerFive = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #b3c6b1;
   > div {
+    > span {
+      font-family: "Crimson Pro";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 67px;
+      text-align: center;
+      color: #000000;
+      margin-top: 108px;
+      margin-bottom: 66px;
+    }
+    > p {
+      font-family: "Courier New";
+      font-style: normal;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 41px;
+      text-align: center;
+      color: #000000;
+    }
   }
 `;
 const ImageContainer = styled.div`

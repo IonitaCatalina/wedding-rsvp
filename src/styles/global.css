@@ -8,7 +8,7 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
-  font-family: Crimson Pro, Work Sans;
+  font-family: "Crimson Pro", "Work Sans", "Courier New";
 }
 
 body {

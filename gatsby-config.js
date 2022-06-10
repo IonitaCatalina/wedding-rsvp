@@ -21,6 +21,7 @@ module.exports = {
         fonts: [
           `Crimson Pro:200,300,400,500,600,700`,
           `Work Sans:200,300,400,500,600,700`,
+          `Courier New:200,300,400,500,600,700`,
         ],
         display: "swap",
       },
