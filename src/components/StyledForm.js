@@ -10,6 +10,7 @@ const USER_ID = "qgThwRlfEPoe7n9bS";
 
 const FormWrap = styled.div`
   width: 400px;
+  margin-bottom: 66px;
   label {
     font-family: "Courier New";
     font-style: normal;
@@ -28,14 +29,11 @@ const ContactForm = () => {
     children: "nu",
   });
 
-  console.log(formValues);
-
   const handleOnSubmit = (e) => {
     e.preventDefault();
 
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, USER_ID).then(
       () => {
-        console.log(e.target);
         Swal.fire({
           icon: "success",
           title: "Message Sent Successfully",

@@ -5,9 +5,10 @@ import Layout from "../components/Layout";
 import Img from "gatsby-image";
 import { useCountdown } from "../components/hooks/useCountdown";
 import StyledForm from "../components/StyledForm";
+import BackgroundImage from "gatsby-background-image";
 
 const Date = styled.div`
-  color: #000;
+  color: #fff;
   display: flex;
   flex-direction: column;
   > div {
@@ -49,12 +50,11 @@ const MaxWidth = styled.div`
 `;
 
 const BannerOne = styled.div`
-  background: #f2f6f3;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #000;
+  color: #fff;
   > div {
     > span {
       font-family: "Work Sans";
@@ -187,11 +187,6 @@ const BannerTwo = styled.div`
         max-width: 200px;
         margin: 0 15px;
       }
-      span {
-        padding: 100px;
-        background: #c4c4c4;
-        border-radius: 135.5px;
-      }
     }
 
     #nasii {
@@ -244,6 +239,7 @@ const BannerFive = styled.div`
   flex-direction: column;
   align-items: center;
   background: #b3c6b1;
+  padding: 66px auto;
   > div {
     > span {
       font-family: "Crimson Pro";
@@ -253,7 +249,7 @@ const BannerFive = styled.div`
       line-height: 67px;
       text-align: center;
       color: #000000;
-      margin-top: 108px;
+      margin-top: 42px;
       margin-bottom: 66px;
     }
     > p {
@@ -268,8 +264,16 @@ const BannerFive = styled.div`
   }
 `;
 const ImageContainer = styled.div`
+  height: 300px;
+  max-width: 300px;
+  min-width: 300px;
+  margin: 15px auto;
+  border-radius: 300px;
+  overflow: hidden;
+`;
+
+const Hero = styled(BackgroundImage)`
   width: 100%;
-  margin-top: 15px;
 `;
 
 const Counter = () => {
@@ -304,8 +308,29 @@ const IndexPage = () => {
     query {
       nasii: file(name: { eq: "nasii" }) {
         childImageSharp {
-          fixed(width: 347, height: 347) {
+          fixed(width: 300, height: 300) {
             ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      deana: file(name: { eq: "deana" }) {
+        childImageSharp {
+          fixed(width: 300, height: 300) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      alex: file(name: { eq: "alex" }) {
+        childImageSharp {
+          fixed(width: 300, height: 300) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      hero: file(name: { eq: "hero" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
@@ -314,15 +339,17 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <BannerOne>
-        <MaxWidth>
-          <span>Buna Ioana si Vasile, noi,</span>
-          <h1>Alex & Diana</h1>
-          <h3>Ne căsătorim!</h3>
-          <h5>în</h5>
-          <Counter />
-        </MaxWidth>
-      </BannerOne>
+      <Hero {...data.hero.childImageSharp}>
+        <BannerOne>
+          <MaxWidth>
+            <span>Buna Ioana si Vasile, noi,</span>
+            <h1>Alex & Diana</h1>
+            <h3>Ne căsătorim!</h3>
+            <h5>în</h5>
+            <Counter />
+          </MaxWidth>
+        </BannerOne>
+      </Hero>
 
       <BannerTwo>
         <MaxWidth>
@@ -338,16 +365,20 @@ const IndexPage = () => {
             <div id="mire1">
               <p>{`Radu
              Alexandru Andrei`}</p>
-              <span></span>
+              <ImageContainer>
+                <Img {...data.alex.childImageSharp} />
+              </ImageContainer>
             </div>
             <div id="mire2">
-              <span></span>
+              <ImageContainer>
+                <Img {...data.deana.childImageSharp} />
+              </ImageContainer>
               <p>{`Diana 
             Cristina Enachi`}</p>
             </div>
           </div>
           <div id="nasii">
-            <p>Impreuna cu nașii</p>
+            <p>Impreună cu nașii</p>
             <div id="nume">
               <p>Emilian și </p>
               <p>Delia Ancuța Prodan</p>
