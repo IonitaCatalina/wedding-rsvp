@@ -9,7 +9,15 @@ const TEMPLATE_ID = "template_ds3aecg";
 const USER_ID = "qgThwRlfEPoe7n9bS";
 
 const FormWrap = styled.div`
-  width: 400px;
+  display: flex;
+  min-height: 500px;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  form {
+    width: 400px;
+  }
   margin-bottom: 66px;
   label {
     font-family: "Courier New";
@@ -18,9 +26,40 @@ const FormWrap = styled.div`
     font-size: 30px;
     color: #000000;
   }
+  button {
+    font-family: "Work Sans" !important;
+    font-size: 20px !important;
+    text-align: center !important;
+    color: #ffffff !important;
+    background: #000000 !important;
+    border-radius: 0 !important;
+    margin-top: 10px !important;
+  }
+
+  > span {
+    font-family: "Crimson Pro";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 67px;
+    text-align: center;
+    color: #000000;
+    margin-top: 42px;
+    margin-bottom: 66px;
+  }
+  > p {
+    font-family: "Courier New";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 41px;
+    text-align: center;
+    color: #000000;
+  }
 `;
 
 const ContactForm = () => {
+  const [isFormHidden, hideForm] = useState(false);
   const [formValues, setFormValues] = useState({
     partikip: "nu",
     single: false,
@@ -38,6 +77,7 @@ const ContactForm = () => {
           icon: "success",
           title: "Message Sent Successfully",
         });
+        hideForm(true);
       },
       (error) => {
         Swal.fire({
@@ -49,8 +89,19 @@ const ContactForm = () => {
     );
     e.target.reset();
   };
+
+  if (isFormHidden) {
+    return (
+      <FormWrap>
+        <p>Multumim pentru raspuns!</p>
+      </FormWrap>
+    );
+  }
+
   return (
     <FormWrap>
+      <span>Editeaza RSVP</span>
+      <p>Completează formularul de mai jos pentru a ne anunța decizia ta.</p>
       <Form onSubmit={handleOnSubmit}>
         <Form.Field
           id="form-input-control-email"

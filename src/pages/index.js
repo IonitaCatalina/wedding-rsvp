@@ -187,6 +187,10 @@ const BannerTwo = styled.div`
         max-width: 200px;
         margin: 0 15px;
       }
+
+      @media screen and (max-width: 1096px) {
+        flex-direction: column;
+      }
     }
 
     #nasii {
@@ -287,28 +291,6 @@ const BannerFive = styled.div`
   align-items: center;
   background: #b3c6b1;
   padding: 66px auto;
-  > div {
-    > span {
-      font-family: "Crimson Pro";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 60px;
-      line-height: 67px;
-      text-align: center;
-      color: #000000;
-      margin-top: 42px;
-      margin-bottom: 66px;
-    }
-    > p {
-      font-family: "Courier New";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 36px;
-      line-height: 41px;
-      text-align: center;
-      color: #000000;
-    }
-  }
 `;
 const ImageContainer = styled.div`
   height: 300px;
@@ -317,6 +299,10 @@ const ImageContainer = styled.div`
   margin: 15px auto;
   border-radius: 300px;
   overflow: hidden;
+
+  @media screen and (max-width: 1096px) {
+    margin: 15px 30px;
+  }
 `;
 
 const Hero = styled(BackgroundImage)`
@@ -499,13 +485,7 @@ const IndexPage = () => {
       </BannerThree>
 
       <BannerFive>
-        <MaxWidth>
-          <span>Editeaza RSVP</span>
-          <p>
-            Completează formularul de mai jos pentru a ne anunța decizia ta.
-          </p>
-          <StyledForm />
-        </MaxWidth>
+        <StyledForm />
       </BannerFive>
     </Layout>
   );
