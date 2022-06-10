@@ -155,6 +155,11 @@ const BannerTwo = styled.div`
       color: #000000;
       margin-top: 0;
       margin-bottom: 79px;
+      > span {
+        border: 1px solid #000000;
+        font-family: "Work Sans";
+        font-style: normal;
+      }
     }
 
     #parents {
@@ -333,6 +338,10 @@ const Hero = styled(BackgroundImage)`
   width: 100%;
 `;
 
+const Background = styled(BackgroundImage)`
+  width: 100%;
+`;
+
 const Counter = () => {
   const [days, hours, minutes, seconds] = useCountdown(
     "2022-07-28T14:00:00.000Z"
@@ -436,6 +445,13 @@ const IndexPage = () => {
           }
         }
       }
+      background: file(name: { eq: "background" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
     }
   `);
 
@@ -468,13 +484,16 @@ const IndexPage = () => {
       <BannerTwo>
         <MaxWidth>
           <span>și vă invităm la</span>
-          <h2>Nunta noastra!</h2>
-          <h2 id="date">23 Februarie 2022 Iasi, România</h2>
-          <p>Împreuna cu cei care ne-au vegheat pașii:</p>
+          <h2>Nunta noastră!</h2>
+          <h2 id="date">28 August 2022 Iasi, România</h2>
+          <p>Împreună cu cei ce ne-au vegheat pașii:</p>
           <div id="parents">
-            <p>Manuela și Constantin Andrei</p>
+            <p>
+              Manuela și <span>Constantin</span> Andrei
+            </p>
             <p>Aurelia și Neculai Enachi</p>
           </div>
+          <p>Vă invităm să ne fiți alături la oficierea căsătoriei noastre</p>
           <div id="mirii">
             <div id="mire1">
               <p>{`Radu
@@ -492,7 +511,7 @@ const IndexPage = () => {
             </div>
           </div>
           <div id="nasii">
-            <p>Impreună cu nașii</p>
+            <p>Cu binecuvântarea nașilor</p>
             <div id="nume">
               <p>Emilian și </p>
               <p>Delia Ancuța Prodan</p>

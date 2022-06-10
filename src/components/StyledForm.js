@@ -102,8 +102,9 @@ const ContactForm = () => {
 
   return (
     <FormWrap>
-      <span>Editeaza RSVP</span>
+      <span>Editează RSVP</span>
       <p>Completează formularul de mai jos pentru a ne anunța decizia ta.</p>
+      <p>Vă rog sa ne confirmați până la data de 14 august 2022.</p>
       <Form onSubmit={handleOnSubmit}>
         <Form.Field
           id="form-input-control-email"
