@@ -1,0 +1,15 @@
+/*!
+  Copyright (c) 2015 Jed Watson.
+  Based on code that is Copyright 2013-2015, Facebook, Inc.
+  All rights reserved.
+*/
+
+/*!
+ * html-attributes
+ * https://github.com/alexmingoia/html-attributes
+ */
+
+/*!
+* sweetalert2 v11.4.17
+* Released under the MIT License.
+*/
