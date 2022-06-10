@@ -6,6 +6,7 @@ import Img from "gatsby-image";
 import { useCountdown } from "../components/hooks/useCountdown";
 import StyledForm from "../components/StyledForm";
 import BackgroundImage from "gatsby-background-image";
+import { useQueryParam } from "gatsby-query-params";
 
 const Date = styled.div`
   color: #fff;
@@ -388,6 +389,9 @@ const BannerSix = styled(BannerTwo)`
 `;
 
 const IndexPage = () => {
+  const first = useQueryParam("first");
+  const second = useQueryParam("second");
+
   const data = useStaticQuery(graphql`
     query {
       nasii: file(name: { eq: "nasii" }) {
@@ -435,12 +439,24 @@ const IndexPage = () => {
     }
   `);
 
+  function renderInvitees() {
+    if (first && second) {
+      return `Buna ${first} si ${second}, noi,`;
+    }
+
+    if (first && !second) {
+      return `Buna ${first}, noi,`;
+    }
+
+    return "Noi,";
+  }
+
   return (
     <Layout>
       <Hero {...data.hero.childImageSharp}>
         <BannerOne>
           <MaxWidth>
-            <span>Buna Ioana si Vasile, noi,</span>
+            <span>{renderInvitees()}</span>
             <h1>Alex & Diana</h1>
             <h3>Ne căsătorim!</h3>
             <h5>în</h5>
