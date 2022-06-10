@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import Layout from "../components/Layout";
 import Img from "gatsby-image";
 import { useCountdown } from "../components/hooks/useCountdown";
@@ -212,24 +212,71 @@ const BannerTwo = styled.div`
 `;
 
 const BannerThree = styled.div`
-  background: #739d7f;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  > div {
-    > h4 {
-      font-family: "Crimson Pro";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 60px;
-      line-height: 67px;
-      text-align: center;
-      color: #000000;
-      margin-top: 37px;
-      margin-bottom: 133px;
-    }
+  flex-direction: row;
+  color: #000000;
+
+  h3 {
+    font-family: "Crimson Pro";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 44px;
+    margin-bottom: 30px;
+    text-align: center;
   }
+
+  h4 {
+    font-family: "Work Sans";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 35px;
+    margin-bottom: 40px;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  p {
+    font-family: "Courier New";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 34px;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 1440px) {
+    flex-direction: column;
+  }
+`;
+
+const Location = styled.div`
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  > div {
+    margin-bottom: 40px;
+    width: 659px;
+  }
+  @media screen and (max-width: 1440px) {
+    align-items: center;
+  }
+  ${(props) =>
+    props.swing &&
+    css`
+      align-items: flex-end;
+      @media screen and (max-width: 1440px) {
+        align-items: center;
+      }
+    `}
+`;
+
+const EventHero = styled(BackgroundImage)`
+  width: 100%;
 `;
 
 const BannerFive = styled.div`
@@ -334,6 +381,20 @@ const IndexPage = () => {
           }
         }
       }
+      beserica: file(name: { eq: "beserica" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      petrekerea: file(name: { eq: "petrekerea" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
     }
   `);
 
@@ -391,9 +452,50 @@ const IndexPage = () => {
       </BannerTwo>
 
       <BannerThree>
-        <MaxWidth>
-          <h4>Evenimente</h4>
-        </MaxWidth>
+        <EventHero {...data.beserica.childImageSharp}>
+          <Location swing>
+            <div>
+              <h3>Cununia religioasă</h3>
+              <h4>Biserica “Sf. Nicolae” Copou</h4>
+              <p>
+                ora <strong>14:00</strong>
+              </p>
+              <p>28 August 2022</p>
+            </div>
+            <iframe
+              title="biserica nicolau"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2711.3864508858064!2d27.558154215598513!3d47.189448124694394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cafcae31bb2cbb%3A0x503060df5506dfe6!2sChurch%20of%20Saint%20Nicolas%20Copou!5e0!3m2!1sen!2sro!4v1654877475683!5m2!1sen!2sro"
+              width="659"
+              height="300"
+              style={{ border: "0" }}
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </Location>
+        </EventHero>
+        <EventHero {...data.petrekerea.childImageSharp}>
+          <Location>
+            <div>
+              <h3>Petrecerea</h3>
+              <h4>Restaurant La Castel, Salon GreenView</h4>
+              <p>
+                ora <strong>16:00</strong>
+              </p>
+              <p>28 August 2022</p>
+            </div>
+            <iframe
+              title="petrcker"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2710.2386099245587!2d27.531942115599144!3d47.21191332315224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cae39abb521203%3A0xa66728a25baac298!2sGreen%20View%20Salon!5e0!3m2!1sen!2sro!4v1654877564376!5m2!1sen!2sro"
+              width="659"
+              height="300"
+              style={{ border: "0" }}
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </Location>
+        </EventHero>
       </BannerThree>
 
       <BannerFive>
