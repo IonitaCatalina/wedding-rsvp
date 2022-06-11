@@ -338,10 +338,6 @@ const Hero = styled(BackgroundImage)`
   width: 100%;
 `;
 
-const Background = styled(BackgroundImage)`
-  width: 100%;
-`;
-
 const Counter = () => {
   const [days, hours, minutes, seconds] = useCountdown(
     "2022-07-28T14:00:00.000Z"
