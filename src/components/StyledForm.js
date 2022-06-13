@@ -58,6 +58,15 @@ const FormWrap = styled.div`
     text-align: center;
     color: #000000;
   }
+
+  @media screen and (max-width: 500px) {
+    > span {
+      font-size: 40px;
+    }
+    > p {
+      font-size: 20px;
+    }
+  }
 `;
 
 const ContactForm = () => {

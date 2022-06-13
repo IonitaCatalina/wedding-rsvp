@@ -28,6 +28,14 @@ const Date = styled.div`
     line-height: 35px;
     text-align: center;
   }
+
+  @media screen and (max-width: 500px) {
+    > div {
+      font-size: 40px;
+      line-height: 49px;
+      min-height: 49px;
+    }
+  }
 `;
 
 const DateCluster = styled.div`
@@ -99,6 +107,23 @@ const BannerOne = styled.div`
       text-align: center;
       margin: 26px auto;
     }
+
+    @media screen and (max-width: 500px) {
+      span {
+        font-size: 20px;
+        line-height: 35px;
+      }
+      h1 {
+        font-size: 50px;
+        line-height: 93px;
+      }
+      h3 {
+        font-size: 30px;
+      }
+      h5 {
+        font-size: 15px;
+      }
+    }
   }
 `;
 
@@ -108,7 +133,11 @@ const BannerTwo = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
   > div {
+    .and {
+      display: none;
+    }
     > span {
       font-family: "Crimson Pro";
       font-style: normal;
@@ -233,6 +262,38 @@ const BannerTwo = styled.div`
         margin-bottom: 0px;
       }
     }
+
+    @media screen and (max-width: 500px) {
+      > span {
+        font-size: 30px;
+        line-height: 53px;
+      }
+      > h2 {
+        font-size: 45px;
+        line-height: 50px;
+      }
+
+      > #date {
+        font-size: 40px;
+        line-height: 70px;
+      }
+
+      #parents > p {
+        margin-bottom: 40px;
+      }
+
+      p {
+        font-size: 26px;
+        line-height: 47px;
+      }
+
+      .and {
+        font-family: "Work Sans";
+        display: block;
+        font-size: 40px;
+        margin-bottom: 40px;
+      }
+    }
   }
 `;
 
@@ -277,6 +338,22 @@ const BannerThree = styled.div`
 
   @media screen and (max-width: 1440px) {
     flex-direction: column;
+  }
+
+  @media screen and (max-width: 500px) {
+    h3 {
+      font-size: 30px;
+    }
+
+    h4 {
+      font-size: 25px;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    p {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -378,7 +455,9 @@ const BannerSix = styled(BannerTwo)`
   }
   #parents {
     margin-top: 82px;
-
+    .and {
+      display: none;
+    }
     p {
       max-width: 250px !important;
       font-family: "Crimson Pro";
@@ -389,6 +468,29 @@ const BannerSix = styled(BannerTwo)`
       text-align: center;
 
       color: #000000;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    h4 {
+      font-size: 30px;
+    }
+    #parents {
+      margin-top: 32px;
+      .and {
+        display: none;
+      }
+      p {
+        max-width: 250px !important;
+        font-family: "Crimson Pro";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 53px;
+        text-align: center;
+
+        color: #000000;
+      }
     }
   }
 `;
@@ -487,6 +589,7 @@ const IndexPage = () => {
             <p>
               Manuela și <span>Constantin</span> Andrei
             </p>
+            <div className="and">&</div>
             <p>Aurelia și Neculai Enachi</p>
           </div>
           <p>Vă invităm să ne fiți alături la oficierea căsătoriei noastre</p>
