@@ -276,6 +276,7 @@ const BannerTwo = styled.div`
       > #date {
         font-size: 40px;
         line-height: 70px;
+        max-width: 350px;
       }
 
       #parents > p {
@@ -417,7 +418,7 @@ const Hero = styled(BackgroundImage)`
 
 const Counter = () => {
   const [days, hours, minutes, seconds] = useCountdown(
-    "2022-07-28T14:00:00.000Z"
+    "2022-08-28T14:00:00.000Z"
   );
 
   return (
