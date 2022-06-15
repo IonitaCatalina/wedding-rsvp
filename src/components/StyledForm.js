@@ -104,7 +104,7 @@ const ContactForm = () => {
   if (isFormHidden) {
     return (
       <FormWrap>
-        <p>Multumim pentru raspuns!</p>
+      <p>Mulțumim pentru răspuns!</p>
       </FormWrap>
     );
   }
@@ -113,14 +113,14 @@ const ContactForm = () => {
     <FormWrap>
       <span>Editează RSVP</span>
       <p>Completează formularul de mai jos pentru a ne anunța decizia ta.</p>
-      <p>Vă rog sa ne confirmați până la data de 14 august 2022.</p>
+      <p>Vă rugăm să ne confirmați până la data de 14 August 2022.</p>
       <Form onSubmit={handleOnSubmit}>
         <Form.Field
           id="form-input-control-email"
           control={Input}
           label="E-mail"
           name="user_email"
-          placeholder="Email…"
+          placeholder="Adresă de mail"
           required
         />
         <Form.Field
@@ -128,7 +128,7 @@ const ContactForm = () => {
           control={Input}
           label="Nume"
           name="user_name"
-          placeholder="Name…"
+          placeholder="Nume"
           required
         />
         <Form.Field
@@ -150,7 +150,7 @@ const ContactForm = () => {
             }
             setFormValues(values);
           }}
-          label="Poti participa?"
+          label="Poți participa?"
           value={formValues.partikip}
           checked={formValues.partikip === "da"}
           name="partikip"
@@ -217,9 +217,9 @@ const ContactForm = () => {
         <Form.Field
           id="form-textarea-control-opinion"
           control={TextArea}
-          label="Lasa-ne mai multe detalii"
+          label="Lasă-ne mai multe detalii"
           name="user_message"
-          placeholder="Message…"
+          placeholder="Numărul de copii, alergii, restricții alimentare"
         />
         <Button type="submit" color="green">
           Submit

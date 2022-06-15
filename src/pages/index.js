@@ -556,11 +556,11 @@ const IndexPage = () => {
 
   function renderInvitees() {
     if (first && second) {
-      return `Buna ${first} si ${second}, noi,`;
+      return `Bună ${first} și ${second}, noi,`;
     }
 
     if (first && !second) {
-      return `Buna ${first}, noi,`;
+      return `Bună ${first}, noi,`;
     }
 
     return "Noi,";
@@ -584,7 +584,7 @@ const IndexPage = () => {
         <MaxWidth>
           <span>și vă invităm la</span>
           <h2>Nunta noastră!</h2>
-          <h2 id="date">28 August 2022 Iasi, România</h2>
+          <h2 id="date">28 August 2022 Iași, România</h2>
           <p>Împreună cu cei ce ne-au vegheat pașii:</p>
           <div id="parents">
             <p>
@@ -638,10 +638,10 @@ const IndexPage = () => {
               title="biserica nicolau"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2711.3864508858064!2d27.558154215598513!3d47.189448124694394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cafcae31bb2cbb%3A0x503060df5506dfe6!2sChurch%20of%20Saint%20Nicolas%20Copou!5e0!3m2!1sen!2sro!4v1654877475683!5m2!1sen!2sro"
               style={{ border: "0" }}
-              allowfullscreen=""
+              allowFullScreen=""
               height="300"
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </Location>
         </EventHero>
@@ -660,9 +660,9 @@ const IndexPage = () => {
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2710.2386099245587!2d27.531942115599144!3d47.21191332315224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cae39abb521203%3A0xa66728a25baac298!2sGreen%20View%20Salon!5e0!3m2!1sen!2sro!4v1654877564376!5m2!1sen!2sro"
               style={{ border: "0" }}
               height="300"
-              allowfullscreen=""
+              allowFullScreen=""
               loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </Location>
         </EventHero>
